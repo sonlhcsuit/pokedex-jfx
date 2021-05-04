@@ -1,0 +1,14 @@
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+
+<fx:root type="javafx.scene.layout.HBox" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.components.Card">
+    <TextField fx:id="textField"/>
+    <Button text="Click Me" onAction="#doSth" />
+    <ImageView fx:id="img" preserveRatio="true" fitHeight="200" >
+        <Image  url="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Siberischer_tiger_de_edit02.jpg/800px-Siberischer_tiger_de_edit02.jpg"/>
+    </ImageView>
+</fx:root>
