@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.layout.*;
 
 public class Main extends Application {
 
@@ -15,7 +16,9 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 1080, 720));
         primaryStage.setResizable(false);
         primaryStage.show();
+
     }
+
 
 
     public static void main(String[] args) {
