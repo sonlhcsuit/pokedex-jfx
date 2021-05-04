@@ -3,5 +3,6 @@
 
 <HBox fx:controller="sample.Controller"
       xmlns:fx="http://javafx.com/fxml">
-    <Card text="Hello" url="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Siberischer_tiger_de_edit02.jpg/800px-Siberischer_tiger_de_edit02.jpg"/>
+    <Card text="Hello" imgUrl="https://assets.pokemon.com/assets/cms2/img/pokedex/full/123.png"/>
 </HBox>
+

@@ -5,10 +5,17 @@
 <?import javafx.scene.image.Image?>
 
 
-<fx:root type="javafx.scene.layout.HBox" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.components.Card">
-    <TextField fx:id="textField"/>
-    <Button text="Click Me" onAction="#doSth" />
+<?import javafx.scene.text.Font?>
+<fx:root type="javafx.scene.layout.VBox" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.components.Card" alignment="BASELINE_CENTER">
     <ImageView fx:id="img" preserveRatio="true" fitHeight="200" >
-        <Image  url="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Siberischer_tiger_de_edit02.jpg/800px-Siberischer_tiger_de_edit02.jpg"/>
     </ImageView>
+    <Label text="Pokemon"  >
+        <font>
+            <Font size="24" name="Arial bold italic"/>
+        </font>
+    </Label>
+    <HBox alignment="BASELINE_CENTER" spacing="50">
+        <Label fx:id="textField">Fire</Label>
+        <Label>Water</Label>
+    </HBox>
 </fx:root>

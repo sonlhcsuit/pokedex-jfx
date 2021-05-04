@@ -1,10 +1,12 @@
 package sample.components;
 import java.io.IOException;
 
+import javafx.beans.DefaultProperty;
 import javafx.beans.property.StringProperty;
 //import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -13,20 +15,34 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.Parent;
 
-public class Card extends HBox {
+
+@DefaultProperty(value = "children")
+public class Card extends VBox {
 	@FXML
-	private TextField textField;
+	private Label textField;
 	@FXML
 	private ImageView img;
 
-	public Card(String url) {
-		super();
+	private String imgUrl;
+
+	public Card() {
 		loadFXML(this);
-//		img.setImage(new Image(url));
 		img.setOnMouseClicked((MouseEvent e)->{
 			bug();
 		});
 	}
+
+
+
+
+	public void setImgUrl(String url){
+		this.imgUrl = url;
+		img.setImage(new Image(url));
+	}
+	public String getImgUrl(){
+		return this.imgUrl;
+	}
+
 
 	public String getText() {
 		return textProperty().get();
@@ -47,7 +63,7 @@ public class Card extends HBox {
 	@FXML
 	protected void bug(){
 		String newImageString = String.format("https://assets.pokemon.com/assets/cms2/img/pokedex/full/%03d.png",(int) Math.ceil(Math.random()*800));
-		img.setImage(new Image(newImageString));
+		setImgUrl(newImageString);
 	}
 	public static <T extends Parent> void loadFXML(T component) {
 		FXMLLoader loader = new FXMLLoader();
