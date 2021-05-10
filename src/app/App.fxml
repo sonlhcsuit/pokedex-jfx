@@ -1,10 +1,9 @@
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.geometry.*?>
-<?import app.components.Card?>
 
 <?import app.components.Search?>
 <?import app.components.SideBar?>
+<?import app.components.Card?>
+<?import javafx.scene.control.ScrollPane?>
 <BorderPane>
     <top>
         <Search/>
@@ -12,4 +11,24 @@
     <left>
         <SideBar/>
     </left>
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true">
+            <FlowPane>
+
+                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
+                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
+                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
+                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
+                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
+                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
+                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
+                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
+                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
+                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
+                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
+                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
+            </FlowPane>
+        </ScrollPane>
+
+    </center>
 </BorderPane>

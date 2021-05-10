@@ -3,7 +3,6 @@ import java.io.IOException;
 
 import javafx.beans.DefaultProperty;
 import javafx.beans.property.StringProperty;
-//import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
