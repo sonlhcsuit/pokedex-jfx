@@ -4,10 +4,12 @@
 <?import app.components.Card?>
 
 <?import app.components.Search?>
+<?import app.components.SideBar?>
 <BorderPane>
     <top>
-
-        <Search  />
-
+        <Search/>
     </top>
+    <left>
+        <SideBar/>
+    </left>
 </BorderPane>
