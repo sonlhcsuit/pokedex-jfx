@@ -1,4 +1,9 @@
-#list{
-    -fx-border-color: red;
+#cont{
     -fx-border-style: solid;
+    -fx-border-color: red;
+}
+#search{
+    -fx-min-width:500;
+    -fx-border-radius: 999;
+    -fx-background-radius: 999;
 }
