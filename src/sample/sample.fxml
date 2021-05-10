@@ -1,8 +1,0 @@
-<?import javafx.scene.layout.HBox?>
-<?import sample.components.Card?>
-
-<HBox fx:controller="sample.Controller"
-      xmlns:fx="http://javafx.com/fxml">
-    <Card text="Hello" imgUrl="https://assets.pokemon.com/assets/cms2/img/pokedex/full/123.png"/>
-</HBox>
-

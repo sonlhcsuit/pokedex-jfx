@@ -1,20 +1,20 @@
-package sample;
+package app;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.scene.layout.*;
 
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("App.fxml"));
+        setUserAgentStylesheet(STYLESHEET_CASPIAN);
         primaryStage.setTitle("Pokedex");
         primaryStage.setScene(new Scene(root, 1080, 720));
-        primaryStage.setResizable(false);
+//        primaryStage.setResizable(false);
         primaryStage.show();
 
     }

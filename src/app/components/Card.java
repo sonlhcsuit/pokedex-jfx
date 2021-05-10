@@ -1,4 +1,4 @@
-package sample.components;
+package app.components;
 import java.io.IOException;
 
 import javafx.beans.DefaultProperty;
@@ -7,11 +7,9 @@ import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.Parent;
 
@@ -31,9 +29,6 @@ public class Card extends VBox {
 			bug();
 		});
 	}
-
-
-
 
 	public void setImgUrl(String url){
 		this.imgUrl = url;
@@ -69,7 +64,6 @@ public class Card extends VBox {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setRoot(component);
 		loader.setControllerFactory(theClass -> component);
-
 		String fileName = component.getClass().getSimpleName() + ".fxml";
 		try {
 			loader.load(component.getClass().getResourceAsStream(fileName));

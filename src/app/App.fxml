@@ -1,0 +1,10 @@
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import app.components.Card?>
+
+<BorderPane>
+<!--    <Search>-->
+    <Card text="Hello" imgUrl="@./resources/bulbasaur.png"/>
+<!--    </Search>-->
+</BorderPane>

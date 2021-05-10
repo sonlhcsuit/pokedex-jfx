@@ -2,8 +2,14 @@ module pokedex {
 	requires javafx.fxml;
 	requires javafx.controls;
 	requires javafx.graphics;
-	exports sample.components;
+
 //	exports sample.resources;
-	opens sample;
-	opens sample.components;
+	opens app;
+//	opens app.components.Card;
+	opens app.components.Search;
+	opens app.resources;
+
+	exports app;
+//	exports app.components.Card;
+	exports app.components.Search;
 }

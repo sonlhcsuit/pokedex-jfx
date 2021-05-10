@@ -1,12 +1,11 @@
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
-
 
 <?import javafx.scene.text.Font?>
-<fx:root type="javafx.scene.layout.VBox" xmlns:fx="http://javafx.com/fxml" fx:controller="sample.components.Card" alignment="BASELINE_CENTER">
+<fx:root type="javafx.scene.layout.VBox"
+         xmlns:fx="http://javafx.com/fxml"
+         fx:controller="app.components.Card" alignment="BASELINE_CENTER" >
     <ImageView fx:id="img" preserveRatio="true" fitHeight="200" >
     </ImageView>
     <Label text="Pokemon"  >
