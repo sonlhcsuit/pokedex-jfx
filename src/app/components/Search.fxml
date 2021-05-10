@@ -13,6 +13,7 @@
     <TextField promptText="Enter Pokemon name" id="search" focusTraversable="false" HBox.hgrow="SOMETIMES">
         <HBox.margin>
             <Insets topRightBottomLeft="20">
+
             </Insets>
         </HBox.margin>
         <font>

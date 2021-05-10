@@ -7,5 +7,14 @@
          xmlns:fx="http://javafx.com/fxml"
          fx:controller="app.components.SideBar"
          stylesheets="@/app/components/SideBar.css">
-    <ListView VBox.vgrow="ALWAYS" focusTraversable="false"/>
+    <ListView VBox.vgrow="ALWAYS" focusTraversable="false" id="list">
+        <Label>Test</Label>
+        <Label>Test</Label>
+        <Label>Test</Label>
+        <Label>Test</Label>
+        <Label>Test</Label>
+        <Label>Test</Label>
+
+        <Label>Test</Label>
+    </ListView>
 </fx:root>
