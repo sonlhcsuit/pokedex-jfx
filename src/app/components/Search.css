@@ -1,0 +1,7 @@
+#cont{
+    -fx-border-style: solid;
+    -fx-border-color: red;
+}
+#search{
+    -fx-min-width:500;
+}

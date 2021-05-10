@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.text.Font?>
+<fx:root type="javafx.scene.layout.HBox"
+         xmlns:fx="http://javafx.com/fxml"
+         fx:controller="app.components.Search"
+         stylesheets="@/app/components/Search.css"
+         id="cont"
+         alignment="BASELINE_CENTER"
+
+>
+    <TextField promptText="Enter Pokemon name" id="search" focusTraversable="false" HBox.hgrow="SOMETIMES">
+        <HBox.margin>
+            <Insets topRightBottomLeft="20">
+            </Insets>
+        </HBox.margin>
+        <font>
+            <Font size="24"/>
+        </font>
+    </TextField>
+
+    <Button id="btn" text="Search" focusTraversable="false">
+        <HBox.margin>
+            <Insets  topRightBottomLeft="20">
+            </Insets>
+        </HBox.margin>
+        <font>
+            <Font size="24"/>
+        </font>
+    </Button>
+</fx:root>

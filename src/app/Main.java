@@ -14,7 +14,7 @@ public class Main extends Application {
         setUserAgentStylesheet(STYLESHEET_CASPIAN);
         primaryStage.setTitle("Pokedex");
         primaryStage.setScene(new Scene(root, 1080, 720));
-//        primaryStage.setResizable(false);
+        primaryStage.setResizable(false);
         primaryStage.show();
 
     }

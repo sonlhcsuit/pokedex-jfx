@@ -3,13 +3,12 @@ module pokedex {
 	requires javafx.controls;
 	requires javafx.graphics;
 
-//	exports sample.resources;
+
 	opens app;
-//	opens app.components.Card;
-	opens app.components.Search;
 	opens app.resources;
+	opens app.components;
 
 	exports app;
-//	exports app.components.Card;
-	exports app.components.Search;
+	exports app.components;
+//	exports app.resources;
 }

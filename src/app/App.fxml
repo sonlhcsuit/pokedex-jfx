@@ -3,8 +3,11 @@
 <?import javafx.geometry.*?>
 <?import app.components.Card?>
 
+<?import app.components.Search?>
 <BorderPane>
-<!--    <Search>-->
-    <Card text="Hello" imgUrl="@./resources/bulbasaur.png"/>
-<!--    </Search>-->
+    <top>
+
+        <Search  />
+
+    </top>
 </BorderPane>
