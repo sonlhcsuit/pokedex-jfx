@@ -1,7 +1,62 @@
-.label{
-    /*-fx-background-color: green;*/
-    -fx-text-fill: green;
+.pokemon-name {
+    /*-fx-border-style: solid;*/
+    /*-fx-border-color: black;*/
+    /*-fx-border-width: 2;*/
+    -fx-padding: 0 10 0 10;
+    -fx-border-radius: 5;
 }
-. {
+
+.pokemon-type {
+    /*-fx-border-style: solid;*/
+    /*-fx-border-color: black;*/
+    /*-fx-border-width: 2;*/
+    -fx-padding: 5 10 5 10;
+    -fx-border-radius: 5;
+    -fx-font-size: 20;
+    -fx-background-radius: 5;
+}
+
+#cont {
+    -fx-border-style: solid;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+
+    /*-fx-background-color: gray;*/
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+
+}
+
+#imv {
+    /*-fx-border-radius: 20;*/
+    -fx-border-style: solid;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+
+}
+
+.pokemon--types {
+    /*-fx-border-style: solid;*/
+    /*-fx-border-color: black;*/
+    /*-fx-border-width: 2;*/
+}
+
+.grass {
     -fx-background-color: green;
+    -fx-text-fill: white;
+}
+
+.poison {
+    -fx-background-color: purple;
+    -fx-text-fill: white;
+}
+
+.fire {
+    -fx-background-color: orange;
+    -fx-text-fill: white;
+}
+
+.water {
+    -fx-background-color: blue;
+    -fx-text-fill: white;
 }

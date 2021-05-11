@@ -12,21 +12,21 @@
         <SideBar/>
     </left>
     <center>
-        <ScrollPane fitToHeight="true" fitToWidth="true">
-            <FlowPane>
+        <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false">
+            <FlowPane focusTraversable="false">
 
-                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
-                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
-                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
-                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
-                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
-                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
-                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
-                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
-                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
-                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
-                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
-                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>
+                <Card imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css" types="grass;poison" name="bulbarsaur" />
+                <Card imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css" types="fire" name="raikou"/>
+                <Card imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css" types="water" name="frog"/>
+<!--                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>-->
+<!--                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>-->
+<!--                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>-->
+<!--                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>-->
+<!--                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>-->
+<!--                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>-->
+<!--                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>-->
+<!--                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>-->
+<!--                <Card text="Hello" imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"/>-->
             </FlowPane>
         </ScrollPane>
 

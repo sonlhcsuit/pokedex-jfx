@@ -3,18 +3,22 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
 
+
+<?import javafx.scene.text.Text?>
 <fx:root type="javafx.scene.layout.VBox"
          xmlns:fx="http://javafx.com/fxml"
-         fx:controller="app.components.Card" alignment="BASELINE_CENTER" >
-    <ImageView fx:id="img" preserveRatio="true" fitHeight="200" >
-    </ImageView>
-    <Label text="Pokemon"  >
+         fx:controller="app.components.Card" alignment="BASELINE_CENTER" id="cont" prefWidth="200" minHeight="300" >
+    <StackPane >
+        <ImageView fx:id="img" preserveRatio="true" fitHeight="200">
+        </ImageView>
+    </StackPane>
+
+    <Label fx:id="pokemonName" id="pokemonName" styleClass="pokemon-name">
         <font>
             <Font size="24" name="Arial bold italic"/>
         </font>
     </Label>
-    <HBox alignment="BASELINE_CENTER" spacing="50">
-        <Label fx:id="textField">Fire</Label>
-        <Label>Water</Label>
+    <HBox spacing="20" alignment="BASELINE_CENTER" fx:id="pokemonType" styleClass="pokemon--types">
     </HBox>
+
 </fx:root>
