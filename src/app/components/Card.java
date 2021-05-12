@@ -27,16 +27,20 @@ public class Card extends VBox {
 
 	private String imgUrl;
 
-	public Card(@NamedArg("name") String name, @NamedArg("types") String types) {
+	public Card(@NamedArg("name") String name, @NamedArg("types") String types, @NamedArg("imgUrl") String img) {
 		loadFXML(this);
 		pokemonName.setText(name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase());
+		System.out.println(name);
+		System.out.println(types);
+		System.out.println(img);
 		insertTypes(types);
-//		img.setOnMouseClicked(t -> {
-//			bug();
-//		});
+		setImgUrl(img);
 	}
 
 	// custom property
+	public void initialize() {
+
+	}
 
 	public void setImgUrl(String url) {
 		this.imgUrl = url;
@@ -70,8 +74,8 @@ public class Card extends VBox {
 
 	@FXML
 	protected void bug() {
-		String newImageString = String.format("https://assets.pokemon.com/assets/cms2/img/pokedex/full/%03d.png", (int) Math.ceil(Math.random() * 800));
-		setImgUrl(newImageString);
+//		String newImageString = String.format("https://assets.pokemon.com/assets/cms2/img/pokedex/full/%03d.png", (int) Math.ceil(Math.random() * 800));
+//		setImgUrl(newImageString);
 	}
 
 	public static <T extends Parent> void loadFXML(T component) {
