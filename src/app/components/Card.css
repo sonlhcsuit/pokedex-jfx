@@ -53,10 +53,13 @@
 }
 
 .water {
-    -fx-background-color: blue;
+    -fx-background-color: #6991F1;
     -fx-text-fill: white;
 }
-
+.flying{
+    -fx-background-color: #A890F0;
+    -fx-text-fill: white;
+}
 .fighting {
     -fx-background-color: #C13129;
     -fx-text-fill: white;
@@ -123,7 +126,7 @@
     -fx-text-fill: white;
 }
 
-.stell {
+.steel {
     -fx-background-color: #B9B9D0;
     -fx-text-fill: white;
 }

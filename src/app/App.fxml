@@ -2,10 +2,8 @@
 
 <?import app.components.Search?>
 <?import app.components.SideBar?>
-<?import app.components.Card?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="app.App"
 >
@@ -21,14 +19,6 @@
                 <padding>
                     <Insets top="10" bottom="10" left="50" right="50"/>
                 </padding>
-<!--                <Card imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"-->
-<!--                      types="grass;poison" name="bulbarsaur" styleClass=""/>-->
-<!--                <Card imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"-->
-<!--                      types="grass;poison" name="bulbarsaur"/>-->
-<!--                <Card imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"-->
-<!--                      types="grass;poison" name="bulbarsaur"/>-->
-<!--                <Card imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"-->
-<!--                      types="grass;poison" name="bulbarsaur"/>-->
             </FlowPane>
         </ScrollPane>
 
