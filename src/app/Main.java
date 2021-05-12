@@ -11,6 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("App.fxml"));
+        System.out.println(root);
         setUserAgentStylesheet(STYLESHEET_CASPIAN);
         primaryStage.setTitle("Pokedex");
         primaryStage.setScene(new Scene(root, 1080, 720));

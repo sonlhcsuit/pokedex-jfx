@@ -31,9 +31,9 @@ public class Card extends VBox {
 		loadFXML(this);
 		pokemonName.setText(name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase());
 		insertTypes(types);
-		img.setOnMouseClicked(t -> {
-			bug();
-		});
+//		img.setOnMouseClicked(t -> {
+//			bug();
+//		});
 	}
 
 	// custom property

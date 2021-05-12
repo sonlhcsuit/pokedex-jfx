@@ -2,7 +2,7 @@ module pokedex {
 	requires javafx.fxml;
 	requires javafx.controls;
 	requires javafx.graphics;
-
+	requires java.net.http;
 
 	opens app;
 	opens app.resources;
