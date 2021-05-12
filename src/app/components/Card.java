@@ -30,17 +30,14 @@ public class Card extends VBox {
 	public Card(@NamedArg("name") String name, @NamedArg("types") String types, @NamedArg("imgUrl") String img) {
 		loadFXML(this);
 		pokemonName.setText(name.substring(0, 1).toUpperCase() + name.substring(1).toLowerCase());
-		System.out.println(name);
-		System.out.println(types);
-		System.out.println(img);
 		insertTypes(types);
 		setImgUrl(img);
 	}
 
-	// custom property
-	public void initialize() {
-
-	}
+//	 custom property
+//	public void initialize() {
+//		System.out.println(this.getChildren());
+//	}
 
 	public void setImgUrl(String url) {
 		this.imgUrl = url;

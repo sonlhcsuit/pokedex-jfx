@@ -5,6 +5,7 @@
 <?import app.components.Card?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="app.App"
 >
@@ -15,12 +16,19 @@
         <SideBar fx:id="side"/>
     </left>
     <center>
-        <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" >
-            <FlowPane focusTraversable="false" vgap="20" hgap="50" fx:id="cardCont">
+        <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false">
+            <FlowPane vgap="20" hgap="50" fx:id="cardCont">
                 <padding>
                     <Insets top="10" bottom="10" left="50" right="50"/>
                 </padding>
-
+<!--                <Card imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"-->
+<!--                      types="grass;poison" name="bulbarsaur" styleClass=""/>-->
+<!--                <Card imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"-->
+<!--                      types="grass;poison" name="bulbarsaur"/>-->
+<!--                <Card imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"-->
+<!--                      types="grass;poison" name="bulbarsaur"/>-->
+<!--                <Card imgUrl="@/app/resources/bulbasaur.png" stylesheets="@/app/components/Card.css"-->
+<!--                      types="grass;poison" name="bulbarsaur"/>-->
             </FlowPane>
         </ScrollPane>
 

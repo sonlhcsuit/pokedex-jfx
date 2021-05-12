@@ -22,15 +22,18 @@ public class App {
 	@FXML
 	private FlowPane cardCont;
 
+	private Vector<Card> cards;
 
 	public void initialize() {
-		pokemonList(0, 30);
+		cards = new Vector<>();
+		pokemonList(0, 50);
 	}
 
 	public void createCard(String name) {
 		HttpClient client = HttpClient.newBuilder().build();
 		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(String.format("https://pokeapi.co/api/v2/pokemon/%s", name)))
 				.build();
+
 		CompletableFuture<String> result = client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
 				.thenApplyAsync((response) -> {
 					int status = response.statusCode();
@@ -49,7 +52,6 @@ public class App {
 						id = matcher.group();
 					}
 
-
 					pattern = Pattern.compile("(?<=\\\"types\\\":\\[).+?(?=\\])", Pattern.DOTALL);
 					matcher = pattern.matcher(body);
 					matcher.find();
@@ -59,16 +61,28 @@ public class App {
 					matcher = pattern.matcher(typeGroup);
 					matcher.find();
 					String types = matcher.group();
-					matcher.find();
-					if ("".equals(matcher.group())) {
+					try {
+						matcher.find();
 						types = types + ";" + matcher.group();
+					} catch (IllegalStateException e) {
+						System.out.println(e.getMessage());
+					} finally {
+//						Only 1 type
+						Card card = new Card(name, types, String.format("https://assets.pokemon.com/assets/cms2/img/pokedex/full/%03d.png", Integer.parseInt(id)));
+						this.cardCont.getChildren().add(card);
+						return "";
 					}
-					Card card = new Card(name, types, String.format("https://assets.pokemon.com/assets/cms2/img/pokedex/full/%03d.png", Integer.parseInt(id) ));
-					System.out.println(card);
-					cardCont.getChildren().add(card);
-					return "";
-				});
 
+				});
+		result.join();
+
+	}
+
+	public void updateView() {
+		System.out.println(this.cards);
+//		for (Card card : cards) {
+//			cardCont.getChildren().add()
+//		}
 
 	}
 
@@ -90,6 +104,7 @@ public class App {
 					Pattern pattern = Pattern.compile("(?<=\\\"name\\\":\\\").*?(?=\\\")", Pattern.DOTALL);
 					Matcher matches = pattern.matcher(body);
 					Vector<Label> v = new Vector<>();
+					Vector<String> names = new Vector<>();
 					int i = 0;
 					while (matches.find()) {
 						var name = matches.group();
@@ -99,16 +114,19 @@ public class App {
 							System.out.println(label.getText());
 						});
 						v.add(label);
-						if (i == 0) {
+						try {
 							createCard(name);
-							i++;
+						} catch (Exception e) {
+							System.out.println(name);
+							System.out.println(e.getMessage());
 						}
+						names.add(name);
 					}
-//					System.out.println(v);
 					side.updateList(v);
 					return null;
 				});
-		thenApplyAsync.join(); // prevents main() from exiting too early
+		String data = thenApplyAsync.join(); // prevents main() from exiting too early
+		System.out.println(data);
 	}
 
 

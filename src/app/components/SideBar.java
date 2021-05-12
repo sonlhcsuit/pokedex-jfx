@@ -38,6 +38,7 @@ public class SideBar extends VBox {
 		for (Label label : labelList) {
 			listView.getItems().add(label);
 		}
+
 	}
 //	public void pokemonList(int from, int amount) {
 //		HttpClient client = HttpClient.newBuilder().build();
