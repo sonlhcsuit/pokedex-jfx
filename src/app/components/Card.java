@@ -52,18 +52,14 @@ public class Card extends VBox {
 		Label a = createType(typeList[0].toUpperCase());
 		a.getStyleClass().add("pokemon-type");
 		a.getStyleClass().add(typeList[0]);
-		System.out.println(a.getStyleClass());
 		pokemonType.getChildren().add(a);
 		HBox.setHgrow(a, Priority.ALWAYS);
-
 		if (typeList.length == 2) {
 			a = createType(typeList[1].toUpperCase());
 			pokemonType.getChildren().add(a);
 			a.getStyleClass().add("pokemon-type");
 			a.getStyleClass().add(typeList[1]);
 		}
-
-		System.out.println(types);
 	}
 
 	private Label createType(String type) {

@@ -12,9 +12,7 @@
          alignment="BASELINE_CENTER">
     <TextField promptText="Enter Pokemon name" id="search" focusTraversable="false" HBox.hgrow="SOMETIMES">
         <HBox.margin>
-            <Insets topRightBottomLeft="20">
-
-            </Insets>
+            <Insets topRightBottomLeft="20"/>
         </HBox.margin>
         <font>
             <Font size="24"/>
