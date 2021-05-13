@@ -17,6 +17,7 @@ import java.net.http.*;
 import java.net.URI;
 import java.util.Vector;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Function;
 import java.util.regex.*;
 
 public class App {
@@ -34,10 +35,35 @@ public class App {
 	@FXML
 	private Detail detail;
 
+
+
 	public void initialize() {
-		cards = new Vector<>();
-		pokemonList(0, 30);
+//		cards = new Vector<>();
+//		detail.setLoadPokemon(this.loadPokemon);
+//		System.out.println("init load pokemon at app");
+
+//		pokemonList(0, 30);
 	}
+
+	@FXML
+	private Function<String, String> loadPokemon = (String name) -> {
+		System.out.println("hehehe");
+		return "";
+//		HttpClient client = HttpClient.newBuilder().build();
+//		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(String.format("https://pokeapi.co/api/v2/pokemon/%s", name)))
+//				.build();
+//
+//		CompletableFuture<String> result = client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+//				.thenApplyAsync((response) -> {
+//					int status = response.statusCode();
+//					if (status != 200) {
+//						System.err.println("Error: " + response.statusCode());
+//						return "NOT VALID";
+//					}
+//					return response.body();
+//				});
+//		return result.join();
+	};
 
 	public void createCard(String name) {
 		HttpClient client = HttpClient.newBuilder().build();

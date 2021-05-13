@@ -8,6 +8,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
+import java.util.function.Function;
 
 public class Navigator extends HBox {
 	@FXML
@@ -15,6 +16,7 @@ public class Navigator extends HBox {
 	@FXML
 	private Button previous;
 	private int pokemonId;
+	private Function<String, String> loadPokemon;
 
 	public Navigator(@NamedArg("id") int id) {
 		FXMLLoader loader = new FXMLLoader();
@@ -27,6 +29,15 @@ public class Navigator extends HBox {
 			throw new RuntimeException(e);
 		}
 		this.pokemonId = id;
+
+	}
+
+	public void setLoadPokemon(Function<String, String> loadPokemon) {
+		this.loadPokemon = loadPokemon;
+	}
+
+	public Function<String, String> getLoadPokemon() {
+		return loadPokemon;
 	}
 
 	public void setPokemonId(int pokemonId) {
@@ -38,13 +49,22 @@ public class Navigator extends HBox {
 	}
 
 	@FXML
-	public void loadPokemon(MouseEvent e) {
-		if (this.next.equals(e.getSource())) {
-			System.out.println("Next");
-		}
-		if (this.previous.equals(e.getSource())) {
-			System.out.println("Previous");
-		}
+
+	public void next(MouseEvent e) {
+		this.loadPokemon.apply("asgdas");
+//		loadPokemon("a");
 
 	}
+
+
+//	@FXML
+//	public void loadPokemon(MouseEvent e) {
+//		if (this.next.equals(e.getSource())) {
+//			System.out.println("Next");
+//		}
+//		if (this.previous.equals(e.getSource())) {
+//			System.out.println("Previous");
+//		}
+//
+//	}
 }

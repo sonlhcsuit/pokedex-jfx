@@ -13,7 +13,7 @@
          fx:controller="app.components.Navigator"
          alignment="BASELINE_CENTER">
 
-    <Button minWidth="200" focusTraversable="false" onMouseClicked="#loadPokemon" fx:id="previous">
+    <Button minWidth="200" focusTraversable="false" onMouseClicked="#next" fx:id="previous">
         <graphic>
             <ImageView fitHeight="50" fitWidth="50">
                 <Image url="@/app/resources/left-arrow.png"/>
@@ -29,7 +29,7 @@
         </HBox.margin>
     </Button>
 
-    <Button minWidth="200" focusTraversable="false" onMouseClicked="#loadPokemon" fx:id="next">
+    <Button minWidth="200" focusTraversable="false" onMouseClicked="#next" fx:id="next">
         <graphic>
             <ImageView fitHeight="50" fitWidth="50">
                 <Image url="@/app/resources/right-arrow.png"/>
