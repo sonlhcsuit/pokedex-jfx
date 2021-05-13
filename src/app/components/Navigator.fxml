@@ -6,9 +6,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <fx:root type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="app.components.Navigator"
-            prefHeight="400.0" prefWidth="600.0">
-<Label>This is navigator</Label>
+         xmlns:fx="http://javafx.com/fxml"
+         fx:controller="app.components.Navigator"
+>
+
+    <Button>
+        <graphic>
+            <ImageView fitHeight="50" fitWidth="50">
+                <Image  url="@/app/resources/bulbasaur.png"/>
+            </ImageView>
+
+        </graphic>
+        Previous
+    </Button>
 </fx:root>
