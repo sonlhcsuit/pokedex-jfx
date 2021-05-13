@@ -1,13 +1,22 @@
 package app.components;
 
+import javafx.beans.NamedArg;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 
 import java.io.IOException;
 
 public class Navigator extends HBox {
+	@FXML
+	private Button next;
+	@FXML
+	private Button previous;
+	private int pokemonId;
 
-	public Navigator() {
+	public Navigator(@NamedArg("id") int id) {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setRoot(this);
 		loader.setControllerFactory((empty) -> this);
@@ -17,5 +26,25 @@ public class Navigator extends HBox {
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
+		this.pokemonId = id;
+	}
+
+	public void setPokemonId(int pokemonId) {
+		this.pokemonId = pokemonId;
+	}
+
+	public int getPokemonId() {
+		return pokemonId;
+	}
+
+	@FXML
+	public void loadPokemon(MouseEvent e) {
+		if (this.next.equals(e.getSource())) {
+			System.out.println("Next");
+		}
+		if (this.previous.equals(e.getSource())) {
+			System.out.println("Previous");
+		}
+
 	}
 }

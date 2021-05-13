@@ -20,6 +20,8 @@ public class Detail extends BorderPane {
 	private Label number;
 	@FXML
 	private ImageView image;
+	@FXML
+	private Navigator navigator;
 
 	public Detail(@NamedArg("name") String name, @NamedArg("number") int number, @NamedArg("image") String image) {
 		FXMLLoader loader = new FXMLLoader();

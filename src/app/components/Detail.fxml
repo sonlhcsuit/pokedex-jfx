@@ -82,11 +82,10 @@
                         <Insets top="10" bottom="20"/>
                     </VBox.margin>
                 </Stat>
-
             </VBox>
         </HBox>
     </center>
     <bottom>
-        <Navigator/>
+        <Navigator pokemonId="1" fx:id="navigator"/>
     </bottom>
 </fx:root>
