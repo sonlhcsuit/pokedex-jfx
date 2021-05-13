@@ -1,12 +1,14 @@
-<?import javafx.scene.layout.*?>
-
 <?import app.components.Search?>
 <?import app.components.SideBar?>
+<?import app.components.Detail?>
+
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.geometry.Insets?>
+
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="app.App"
->
+            stylesheets="@/app/App.css"
+            fx:controller="app.App">
     <top>
         <Search/>
     </top>
@@ -14,13 +16,25 @@
         <SideBar fx:id="side"/>
     </left>
     <center>
-        <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false">
-            <FlowPane vgap="20" hgap="50" fx:id="cardCont">
-                <padding>
-                    <Insets top="10" bottom="10" left="50" right="50"/>
-                </padding>
-            </FlowPane>
-        </ScrollPane>
+        <VBox alignment="CENTER" styleClass="border-black">
+            <HBox alignment="BASELINE_CENTER">
+                <Detail fx:id="detail" name="bulbasaur" number="01" image="@/app/resources/bulbasaur.png"/>
+            </HBox>
+            <!--            <VBox alignment="BASELINE_CENTER" s>-->
+
+            <!--                <HBox styleClass="border" fx:id="cont" alignment="BASELINE_CENTER">-->
+            <!--                    <Detail fx:id="detail"/>-->
+            <!--                    &lt;!&ndash;            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" styleClass="border">&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                <FlowPane vgap="20" hgap="50" fx:id="cardCont">&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                    <padding>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                        <Insets top="10" bottom="10" left="50" right="50"/>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                    </padding>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;                </FlowPane>&ndash;&gt;-->
+            <!--                    &lt;!&ndash;            </ScrollPane>&ndash;&gt;-->
+            <!--                </HBox>-->
+            <!--            </VBox>-->
+        </VBox>
+
 
     </center>
 </BorderPane>

@@ -1,0 +1,23 @@
+.border{
+    -fx-border-style: solid;
+    -fx-border-color: blue;
+    -fx-border-width: 1px;
+}
+
+.image-cont {
+    /*-fx-border-width: 1;*/
+    -fx-background-radius: 20;
+    -fx-background-color: #f2f2f2;
+    -fx-pref-height: 450;
+}
+
+.progress-bar{
+    -fx-background-radius: 10;
+}
+.progress-bar > .bar, .progress-bar > .track {
+    -fx-background-insets: 0;
+    /*-fx-border-width: 1;*/
+    -fx-border-radius: 10;
+    /*-fx-border-style: solid;*/
+    -fx-background-radius: 10;
+}

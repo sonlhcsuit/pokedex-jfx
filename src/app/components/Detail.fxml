@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<fx:root type="javafx.scene.layout.BorderPane"
+         xmlns:fx="http://javafx.com/fxml"
+         styleClass="border"
+         stylesheets="@/app/components/Detail.css"
+         fx:controller="app.components.Detail"
+         prefHeight="600"
+         prefWidth="600"
+         fx:id="detailCont">
+    <top>
+        <VBox alignment="CENTER">
+            <Label fx:id="name">Bulbasaur
+                <font>
+                    <Font size="32" name="Arial Bold Italic"/>
+                </font>
+            </Label>
+            <Label fx:id="number">
+                001
+                <font>
+                    <Font size="16" name="Arial Italic"/>
+                </font>
+            </Label>
+        </VBox>
+    </top>
+    <center>
+        <HBox alignment="CENTER_LEFT">
+            <HBox maxHeight="400" styleClass="image-cont" alignment="CENTER">
+                <ImageView fitWidth="300" fitHeight="300" fx:id="image"/>
+            </HBox>
+            <VBox>
+                <HBox alignment="CENTER" styleClass="border">
+                    <Label>ATTACK
+
+                        <font>
+                            <Font name="Helvetica" size="20"/>
+                        </font>
+                    </Label>
+                    <ProgressBar progress="0.1" minWidth="150" minHeight="15" >
+                        <HBox.margin >
+                            <Insets left="10" right="10"/>
+                        </HBox.margin>
+
+                    </ProgressBar>
+                    <Label>100
+                        <font>
+                            <Font name="Helvetica" size="20"/>
+                        </font>
+                    </Label>
+                </HBox>
+
+            </VBox>
+        </HBox>
+    </center>
+    <bottom>
+        <HBox>
+            <Label>Next</Label>
+            <Label>Previous</Label>
+        </HBox>
+    </bottom>
+</fx:root>

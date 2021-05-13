@@ -1,0 +1,11 @@
+.border{
+    -fx-border-style: solid;
+    -fx-border-color: red;
+    -fx-border-width: 1px;
+}
+
+.border-black {
+    -fx-border-style: solid;
+    -fx-border-color: black;
+    -fx-border-width: 0.5;
+}

@@ -1,13 +1,17 @@
 package app;
 
 import app.components.Card;
+import app.components.Detail;
 import app.components.SideBar;
 import javafx.fxml.FXML;
 
 import javafx.scene.control.Label;
 
+import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.HBox;
 
 import java.net.http.*;
 import java.net.URI;
@@ -22,11 +26,17 @@ public class App {
 	@FXML
 	private FlowPane cardCont;
 
+	@FXML
+	private HBox cont;
+	@FXML
 	private Vector<Card> cards;
+
+	@FXML
+	private Detail detail;
 
 	public void initialize() {
 		cards = new Vector<>();
-		pokemonList(0, 50);
+		pokemonList(0, 30);
 	}
 
 	public void createCard(String name) {
@@ -44,7 +54,6 @@ public class App {
 					return response.body();
 				})
 				.thenApplyAsync((body) -> {
-//					System.out.println(body); 
 					Pattern pattern = Pattern.compile("(?<=\\\"id\\\":)\\'?.+?\\\"?(?=,)", Pattern.DOTALL);
 					Matcher matcher = pattern.matcher(body);
 					String id = "";
@@ -69,7 +78,7 @@ public class App {
 					} finally {
 //						Only 1 type
 						Card card = new Card(name, types, String.format("https://assets.pokemon.com/assets/cms2/img/pokedex/full/%03d.png", Integer.parseInt(id)));
-						this.cardCont.getChildren().add(card);
+//						this.cardCont.getChildren().add(card);
 						return "";
 					}
 
@@ -80,10 +89,6 @@ public class App {
 
 	public void updateView() {
 		System.out.println(this.cards);
-//		for (Card card : cards) {
-//			cardCont.getChildren().add()
-//		}
-
 	}
 
 	public void pokemonList(int from, int amount) {
@@ -115,7 +120,7 @@ public class App {
 						});
 						v.add(label);
 						try {
-							createCard(name);
+//							createCard(name);
 						} catch (Exception e) {
 							System.out.println(name);
 							System.out.println(e.getMessage());
@@ -126,7 +131,7 @@ public class App {
 					return null;
 				});
 		String data = thenApplyAsync.join(); // prevents main() from exiting too early
-		System.out.println(data);
+//		System.out.println(data);
 	}
 
 
