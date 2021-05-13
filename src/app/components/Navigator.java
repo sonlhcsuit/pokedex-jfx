@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.util.function.Function;
@@ -16,7 +17,7 @@ public class Navigator extends HBox {
 	@FXML
 	private Button previous;
 	private int pokemonId;
-	private Function<String, String> loadPokemon;
+	private Callback<String, String> loadPokemon;
 
 	public Navigator(@NamedArg("id") int id) {
 		FXMLLoader loader = new FXMLLoader();
@@ -32,11 +33,11 @@ public class Navigator extends HBox {
 
 	}
 
-	public void setLoadPokemon(Function<String, String> loadPokemon) {
+	public void setLoadPokemon(Callback<String, String> loadPokemon) {
 		this.loadPokemon = loadPokemon;
 	}
 
-	public Function<String, String> getLoadPokemon() {
+	public Callback<String, String> getLoadPokemon() {
 		return loadPokemon;
 	}
 
@@ -51,7 +52,7 @@ public class Navigator extends HBox {
 	@FXML
 
 	public void next(MouseEvent e) {
-		this.loadPokemon.apply("asgdas");
+		this.loadPokemon.call("asgdas");
 //		loadPokemon("a");
 
 	}

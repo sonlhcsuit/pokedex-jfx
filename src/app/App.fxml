@@ -18,7 +18,7 @@
     <center>
         <VBox alignment="CENTER" styleClass="border-black">
             <HBox alignment="BASELINE_CENTER">
-                <Detail fx:id="detail" name="bulbasaur" number="01" image="@/app/resources/bulbasaur.png" loadPokemon="#loadPokemon"/>
+                <Detail fx:id="detail" name="bulbasaur" number="01" image="@/app/resources/bulbasaur.png" />
             </HBox>
             <!--            <VBox alignment="BASELINE_CENTER" s>-->
 
