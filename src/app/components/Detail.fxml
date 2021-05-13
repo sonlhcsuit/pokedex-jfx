@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
-
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.text.Font?>
+<?import app.components.Stat?>
+
+
 <?import javafx.geometry.Insets?>
+<?import app.components.Navigator?>
 <fx:root type="javafx.scene.layout.BorderPane"
          xmlns:fx="http://javafx.com/fxml"
          styleClass="border"
@@ -39,34 +37,43 @@
             <HBox maxHeight="400" styleClass="image-cont" alignment="CENTER">
                 <ImageView fitWidth="300" fitHeight="300" fx:id="image"/>
             </HBox>
-            <VBox>
-                <HBox alignment="CENTER" styleClass="border">
-                    <Label>ATTACK
+            <VBox alignment="CENTER">
 
-                        <font>
-                            <Font name="Helvetica" size="20"/>
-                        </font>
-                    </Label>
-                    <ProgressBar progress="0.1" minWidth="150" minHeight="15" >
-                        <HBox.margin >
-                            <Insets left="10" right="10"/>
-                        </HBox.margin>
-
-                    </ProgressBar>
-                    <Label>100
-                        <font>
-                            <Font name="Helvetica" size="20"/>
-                        </font>
-                    </Label>
-                </HBox>
+                <Stat type="hp" value="65">
+                    <VBox.margin>
+                        <Insets top="20" bottom="20"/>
+                    </VBox.margin>
+                </Stat>
+                <Stat type="attack" value="65">
+                    <VBox.margin>
+                        <Insets top="10" bottom="20"/>
+                    </VBox.margin>
+                </Stat>
+                <Stat type="defense" value="65">
+                    <VBox.margin>
+                        <Insets top="10" bottom="20"/>
+                    </VBox.margin>
+                </Stat>
+                <Stat type="sp.atk" value="65">
+                    <VBox.margin>
+                        <Insets top="10" bottom="20"/>
+                    </VBox.margin>
+                </Stat>
+                <Stat type="sp.def" value="65">
+                    <VBox.margin>
+                        <Insets top="10" bottom="20"/>
+                    </VBox.margin>
+                </Stat>
+                <Stat type="speed" value="65">
+                    <VBox.margin>
+                        <Insets top="10" bottom="20"/>
+                    </VBox.margin>
+                </Stat>
 
             </VBox>
         </HBox>
     </center>
     <bottom>
-        <HBox>
-            <Label>Next</Label>
-            <Label>Previous</Label>
-        </HBox>
+        <Navigator/>
     </bottom>
 </fx:root>

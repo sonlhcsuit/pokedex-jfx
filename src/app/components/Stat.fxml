@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<fx:root type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml"
+         fx:controller="app.components.Stat"
+         stylesheets="@/app/components/Stat.css"
+         alignment="CENTER" >
+    <Label fx:id="labelType" minWidth="100" >
+        <padding>
+            <Insets left="10"/>
+        </padding>
+        <font>
+            <Font name="Helvetica" size="20"/>
+        </font>
+    </Label>
+    <ProgressBar fx:id="progress" minWidth="150" minHeight="15">
+        <HBox.margin>
+            <Insets left="10" right="10"/>
+        </HBox.margin>
 
-<fx:root type="javafx." xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="app.components.Stat"
-            prefHeight="400.0" prefWidth="600.0">
-
+    </ProgressBar>
+    <Label fx:id="labelValue">
+        <font>
+            <Font name="Helvetica" size="20"/>
+        </font>
+    </Label>
 </fx:root>
