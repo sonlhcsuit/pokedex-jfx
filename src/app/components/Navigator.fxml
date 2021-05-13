@@ -1,25 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+
 <fx:root type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx"
          xmlns:fx="http://javafx.com/fxml"
          fx:controller="app.components.Navigator"
->
+         alignment="BASELINE_CENTER">
 
-    <Button>
+    <Button minWidth="200" focusTraversable="false">
         <graphic>
             <ImageView fitHeight="50" fitWidth="50">
-                <Image  url="@/app/resources/bulbasaur.png"/>
+                <Image url="@/app/resources/left-arrow.png"/>
             </ImageView>
 
         </graphic>
+        <font>
+            <Font name="Arial Italic" size="24"/>
+        </font>
         Previous
+        <HBox.margin>
+            <Insets left="25" right="25"/>
+        </HBox.margin>
+    </Button>
+
+    <Button minWidth="200" focusTraversable="false">
+        <graphic>
+            <ImageView fitHeight="50" fitWidth="50">
+                <Image url="@/app/resources/right-arrow.png"/>
+            </ImageView>
+        </graphic>
+        <font>
+            <Font name="Arial Italic" size="24"/>
+        </font>
+        Next
+
+        <HBox.margin>
+            <Insets left="25" right="25"/>
+        </HBox.margin>
     </Button>
 </fx:root>

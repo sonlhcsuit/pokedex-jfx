@@ -11,15 +11,15 @@
 <?import app.components.Navigator?>
 <fx:root type="javafx.scene.layout.BorderPane"
          xmlns:fx="http://javafx.com/fxml"
-         styleClass="border"
-         stylesheets="@/app/components/Detail.css"
+         stylesheets="@/app/components/Card.css,@/app/components/Detail.css"
          fx:controller="app.components.Detail"
          prefHeight="600"
          prefWidth="600"
          fx:id="detailCont">
     <top>
         <VBox alignment="CENTER">
-            <Label fx:id="name">Bulbasaur
+            <Label fx:id="name">
+                Bulbasaur
                 <font>
                     <Font size="32" name="Arial Bold Italic"/>
                 </font>
@@ -38,7 +38,20 @@
                 <ImageView fitWidth="300" fitHeight="300" fx:id="image"/>
             </HBox>
             <VBox alignment="CENTER">
+                <HBox alignment="CENTER">
+                    <Label styleClass="poison,pokemon-type" minWidth="100" alignment="CENTER">Fighting
+                        <HBox.margin>
+                            <Insets left="15" right="15"/>
+                        </HBox.margin>
+                    </Label>
 
+                    <Label styleClass="grass,pokemon-type" minWidth="100" alignment="CENTER">Flying
+                        <HBox.margin>
+                            <Insets left="15" right="15"/>
+                        </HBox.margin>
+                    </Label>
+
+                </HBox>
                 <Stat type="hp" value="65">
                     <VBox.margin>
                         <Insets top="20" bottom="20"/>
