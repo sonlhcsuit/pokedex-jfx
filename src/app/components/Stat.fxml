@@ -23,7 +23,7 @@
         </HBox.margin>
 
     </ProgressBar>
-    <Label fx:id="labelValue">
+    <Label fx:id="labelValue" minWidth="30">
         <font>
             <Font name="Helvetica" size="15"/>
         </font>

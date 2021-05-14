@@ -56,19 +56,15 @@ public class Detail extends BorderPane {
 		Collections.addAll(types_vec, types_arr);
 		updateTypes(types_vec);
 
-
 		String[] stat_arr = stats.split(";");
 		Vector<Integer> stat_vec = new Vector<>();
 		for (String stat : stat_arr) {
 			stat_vec.add(Integer.parseInt(stat));
 		}
-		System.out.println(stat_vec);
 		updateStat(stat_vec);
-
 	}
 
 	public void updateStat(Vector<Integer> stats) {
-		Vector<Stat> sts = new Vector<>();
 		String[] stat_names = {"hp", "attack", "defense", "sp.atk", "sp.def", "speed"};
 		for (int i = 0; i < stat_names.length; i++) {
 			Stat stat = new Stat(stat_names[i], stats.get(i), 150);
@@ -79,14 +75,12 @@ public class Detail extends BorderPane {
 				VBox.setMargin(stat, new Insets(10, 0, 20, 0));
 			}
 			if (i != 0 && i != 5) {
-				System.out.println(i);
 				VBox.setMargin(stat, new Insets(10, 0, 10, 0));
 			}
 			try {
 				this.cont.getChildren().set(i + 1, stat);
 			} catch (Exception e) {
 				this.cont.getChildren().add(i + 1, stat);
-
 			}
 		}
 
@@ -110,7 +104,12 @@ public class Detail extends BorderPane {
 	}
 
 	public void updateTypes(Vector<String> types) {
-		for (int i = 0; i < 2; i++) {
+		int l = 2;
+		if (types.size() < l) {
+			l = types.size();
+		}
+		this.types.getChildren().clear();
+		for (int i = 0; i < l; i++) {
 			this.types.getChildren().add(createType(types.get(i)));
 		}
 	}

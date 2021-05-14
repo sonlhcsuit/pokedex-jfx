@@ -3,6 +3,7 @@ package app;
 import app.components.Card;
 import app.components.Detail;
 import app.components.SideBar;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 
 import javafx.scene.layout.FlowPane;
@@ -35,7 +36,6 @@ public class App {
 	public void initialize() {
 		side.updateList(0, 4, this.renderPokemon);
 		detail.getNavigator().setRenderPokemon(this.renderPokemon);
-		detail.getNavigator();
 	}
 
 	@FXML
@@ -53,13 +53,16 @@ public class App {
 					return response.body();
 				});
 		return result;
-	};
+	}
+
+	;
 
 	private String strip(String regex, String jsonPokemon) {
 		Pattern pattern = Pattern.compile(regex, Pattern.DOTALL | Pattern.CASE_INSENSITIVE);
 		return pattern.matcher(jsonPokemon).replaceAll("");
 	}
-	private Vector<String> extractTypes(String jsonPokemon){
+
+	private Vector<String> extractTypes(String jsonPokemon) {
 		Vector<String> types = new Vector<>();
 		Pattern pattern = Pattern.compile("(?<=\\\"type\\\"\\:\\{\\\"name\\\"\\:\\\").+?(?=\\\")");
 		Matcher matcher = pattern.matcher(jsonPokemon);
@@ -69,6 +72,7 @@ public class App {
 		return types;
 
 	}
+
 	private Vector<Integer> extractStats(String jsonPokemon) {
 		Vector<Integer> stats = new Vector<>();
 		Pattern pattern = Pattern.compile("(?<=\\\"base_stat\\\":)\\d+");
@@ -82,33 +86,45 @@ public class App {
 	private final Callback<Integer, Void> renderPokemon = (Integer pokemonId) -> {
 		System.out.println(String.format("render %d", pokemonId));
 		this.detail.setPokemonId(pokemonId);
-		this.loadPokemon(pokemonId)
-				.thenApplyAsync((String t) -> {
-					Vector<String> regexes = new Vector<>();
-					regexes.add("\\{\\\"ability\\\":.+?\\}");
+		try {
+			this.loadPokemon(pokemonId)
+					.thenApplyAsync((String t) -> {
+						Vector<String> regexes = new Vector<>();
+						regexes.add("\\{\\\"ability\\\":.+?\\}");
 //					strip ability
-					regexes.add("\\\"sprites\\\":.+?\\{.+?\\}");
+						regexes.add("\\\"sprites\\\":.+?\\{.+?\\}");
 //					strip sprites
-					regexes.add("\\,\\\"version_group_details\\\"\\:\\[.+?\\]");
+						regexes.add("\\,\\\"version_group_details\\\"\\:\\[.+?\\]");
 //					strip version group details of moves
-					regexes.add("\\\"move\\\":\\{.+?\\}");
+						regexes.add("\\\"move\\\":\\{.+?\\}");
 //					strip moves
-					for (String reg : regexes) {
-						t = strip(reg, t);
-					}
-					return t;
-				})
-				.thenApplyAsync((String t) -> {
-					Vector<Integer> stats = extractStats(t);
-					this.detail.updateStat(stats);
-					this.detail.updateImage(pokemonId);
-					return t;
-				}).thenApplyAsync((String t) -> {
-					Vector<String> types = extractTypes(t);
-					this.detail.updateTypes(types);
-			return "";
-		})
-				.join();
+						for (String reg : regexes) {
+							t = strip(reg, t);
+						}
+						return t;
+					})
+					.thenApplyAsync((String t) -> {
+						Vector<Integer> stats = extractStats(t);
+						Platform.runLater(() -> {
+							this.detail.updateStat(stats);
+							this.detail.updateImage(pokemonId);
+						});
+						return t;
+					})
+					.thenApplyAsync((String t) -> {
+//							System.out.println(this.detail);
+						Platform.runLater(() -> {
+							Vector<String> types = extractTypes(t);
+							System.out.println(types);
+
+							this.detail.updateTypes(types);
+						});
+						return "";
+					})
+					.join();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 		return null;
 	};
 //
