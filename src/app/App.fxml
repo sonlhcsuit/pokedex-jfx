@@ -21,7 +21,6 @@
                 <Detail fx:id="detail" name="bulbasaur" stats="60;65;100;80;90;35" types="grass;poison" number="01" image="@/app/resources/bulbasaur.png" />
             </HBox>
             <!--            <VBox alignment="BASELINE_CENTER" s>-->
-
             <!--                <HBox styleClass="border" fx:id="cont" alignment="BASELINE_CENTER">-->
             <!--                    <Detail fx:id="detail"/>-->
             <!--                    &lt;!&ndash;            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" styleClass="border">&ndash;&gt;-->
