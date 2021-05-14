@@ -13,6 +13,8 @@ import java.net.http.*;
 import java.net.URI;
 import java.util.Vector;
 import java.util.concurrent.CompletableFuture;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 public class App {
@@ -37,29 +39,76 @@ public class App {
 	}
 
 	@FXML
-	private Callback<Integer, String> loadPokemon = (Integer id) -> {
-		System.out.println(id);
-//		renderPokemon(String.format("%d", id));
-		return "";
-//		HttpClient client = HttpClient.newBuilder().build();
-//		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(String.format("https://pokeapi.co/api/v2/pokemon/%s", name)))
-//				.build();
-//
-//		CompletableFuture<String> result = client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
-//				.thenApplyAsync((response) -> {
-//					int status = response.statusCode();
-//					if (status != 200) {
-//						System.err.println("Error: " + response.statusCode());
-//						return "NOT VALID";
-//					}
-//					return response.body();
-//				});
-//		return result.join();
+	private CompletableFuture<String> loadPokemon(Integer id) {
+		HttpClient client = HttpClient.newBuilder().build();
+		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(String.format("https://pokeapi.co/api/v2/pokemon/%s", id)))
+				.build();
+		CompletableFuture<String> result = client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+				.thenApplyAsync((response) -> {
+					int status = response.statusCode();
+					if (status != 200) {
+						System.err.println("Error: " + response.statusCode());
+						return "NOT VALID";
+					}
+					return response.body();
+				});
+		return result;
 	};
+
+	private String strip(String regex, String jsonPokemon) {
+		Pattern pattern = Pattern.compile(regex, Pattern.DOTALL | Pattern.CASE_INSENSITIVE);
+		return pattern.matcher(jsonPokemon).replaceAll("");
+	}
+	private Vector<String> extractTypes(String jsonPokemon){
+		Vector<String> types = new Vector<>();
+		Pattern pattern = Pattern.compile("(?<=\\\"type\\\"\\:\\{\\\"name\\\"\\:\\\").+?(?=\\\")");
+		Matcher matcher = pattern.matcher(jsonPokemon);
+		while (matcher.find()) {
+			types.add(matcher.group());
+		}
+		return types;
+
+	}
+	private Vector<Integer> extractStats(String jsonPokemon) {
+		Vector<Integer> stats = new Vector<>();
+		Pattern pattern = Pattern.compile("(?<=\\\"base_stat\\\":)\\d+");
+		Matcher matcher = pattern.matcher(jsonPokemon);
+		while (matcher.find()) {
+			stats.add(Integer.parseInt(matcher.group()));
+		}
+		return stats;
+	}
 
 	private final Callback<Integer, Void> renderPokemon = (Integer pokemonId) -> {
 		System.out.println(String.format("render %d", pokemonId));
 		this.detail.setPokemonId(pokemonId);
+		this.loadPokemon(pokemonId)
+				.thenApplyAsync((String t) -> {
+					Vector<String> regexes = new Vector<>();
+					regexes.add("\\{\\\"ability\\\":.+?\\}");
+//					strip ability
+					regexes.add("\\\"sprites\\\":.+?\\{.+?\\}");
+//					strip sprites
+					regexes.add("\\,\\\"version_group_details\\\"\\:\\[.+?\\]");
+//					strip version group details of moves
+					regexes.add("\\\"move\\\":\\{.+?\\}");
+//					strip moves
+					for (String reg : regexes) {
+						t = strip(reg, t);
+					}
+					return t;
+				})
+				.thenApplyAsync((String t) -> {
+					Vector<Integer> stats = extractStats(t);
+					this.detail.updateStat(stats);
+					this.detail.updateImage(pokemonId);
+					return t;
+				}).thenApplyAsync((String t) -> {
+					Vector<String> types = extractTypes(t);
+					this.detail.updateTypes(types);
+			return "";
+		})
+				.join();
 		return null;
 	};
 //

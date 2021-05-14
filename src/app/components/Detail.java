@@ -7,7 +7,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
+
 import java.io.IOException;
+import java.util.Vector;
 
 
 public class Detail extends BorderPane {
@@ -40,6 +42,18 @@ public class Detail extends BorderPane {
 		this.image.setImage(img);
 	}
 
+	public void updateStat(Vector<Integer> stats) {
+		System.out.println(stats);
+	}
+
+	public void updateImage(Integer id) {
+		System.out.println(id);
+	}
+
+	public void updateTypes(String types) {
+
+	}
+
 	public void setPokemonId(Integer pokemonId) {
 		this.pokemonId = pokemonId;
 	}
@@ -56,7 +70,7 @@ public class Detail extends BorderPane {
 		this.navigator = navigator;
 	}
 
-	public void renderPokemon(String data){
+	public void renderPokemon(String data) {
 		System.out.println("Render from Detail");
 	}
 

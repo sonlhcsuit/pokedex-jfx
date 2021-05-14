@@ -69,12 +69,6 @@ public class Card extends VBox {
 		return label;
 	}
 
-	@FXML
-	protected void bug() {
-//		String newImageString = String.format("https://assets.pokemon.com/assets/cms2/img/pokedex/full/%03d.png", (int) Math.ceil(Math.random() * 800));
-//		setImgUrl(newImageString);
-	}
-
 	public static <T extends Parent> void loadFXML(T component) {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setRoot(component);
