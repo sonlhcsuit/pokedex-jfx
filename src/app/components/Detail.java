@@ -87,7 +87,15 @@ public class Detail extends BorderPane {
 	}
 
 	public void updateImage(Integer id) {
-		System.out.println(id);
+		Image image = new Image(String.format("https://assets.pokemon.com/assets/cms2/img/pokedex/full/%03d.png", id));
+		this.image.setImage(image);
+		this.setPokemonId(id);
+		this.number.setText(String.format("%03d", id));
+
+	}
+
+	public void updateName(String name) {
+		this.name.setText(name.toUpperCase());
 	}
 
 
@@ -116,6 +124,7 @@ public class Detail extends BorderPane {
 
 	public void setPokemonId(Integer pokemonId) {
 		this.pokemonId = pokemonId;
+		this.navigator.setPokemonId(this.pokemonId);
 	}
 
 	public Integer getPokemonId() {
@@ -128,10 +137,6 @@ public class Detail extends BorderPane {
 
 	public void setNavigator(Navigator navigator) {
 		this.navigator = navigator;
-	}
-
-	public void renderPokemon(String data) {
-		System.out.println("Render from Detail");
 	}
 
 }

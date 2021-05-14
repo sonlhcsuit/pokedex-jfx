@@ -73,6 +73,15 @@ public class App {
 
 	}
 
+	private String extractName(String jsonPokemon) {
+		Pattern pattern = Pattern.compile("(?<=\\\"name\\\"\\:\\\").+?(?=\\\")");
+		Matcher matcher = pattern.matcher(jsonPokemon);
+		if (matcher.find()) {
+			return matcher.group();
+		}
+		return "";
+	}
+
 	private Vector<Integer> extractStats(String jsonPokemon) {
 		Vector<Integer> stats = new Vector<>();
 		Pattern pattern = Pattern.compile("(?<=\\\"base_stat\\\":)\\d+");
@@ -84,8 +93,8 @@ public class App {
 	}
 
 	private final Callback<Integer, Void> renderPokemon = (Integer pokemonId) -> {
-		System.out.println(String.format("render %d", pokemonId));
-		this.detail.setPokemonId(pokemonId);
+		System.out.println(String.format("Render %d", pokemonId));
+
 		try {
 			this.loadPokemon(pokemonId)
 					.thenApplyAsync((String t) -> {
@@ -112,12 +121,13 @@ public class App {
 						return t;
 					})
 					.thenApplyAsync((String t) -> {
-//							System.out.println(this.detail);
 						Platform.runLater(() -> {
 							Vector<String> types = extractTypes(t);
-							System.out.println(types);
-
+							String name = extractName(t);
+							this.detail.setPokemonId(pokemonId);
 							this.detail.updateTypes(types);
+							this.detail.updateName(name);
+							System.out.println(String.format("Finish %d - %s", pokemonId, name));
 						});
 						return "";
 					})

@@ -50,13 +50,13 @@ public class Navigator extends HBox {
 	@FXML
 	public void trigger(MouseEvent e) {
 		if (next.equals(e.getSource())) {
-			this.setPokemonId(this.pokemonId + 1);
+//			this.setPokemonId(this.pokemonId + 1);
 
-			this.renderPokemon.call(this.pokemonId);
+			this.renderPokemon.call(this.pokemonId + 1);
 		}
 		if (previous.equals(e.getSource())) {
-			this.setPokemonId(this.pokemonId - 1);
-			this.renderPokemon.call(this.pokemonId);
+//			this.setPokemonId(this.pokemonId - 1);
+			this.renderPokemon.call(this.pokemonId - 1);
 		}
 
 	}

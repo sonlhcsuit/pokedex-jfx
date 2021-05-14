@@ -19,13 +19,13 @@
     <top>
         <VBox alignment="CENTER">
             <Label fx:id="name">
-                Bulbasaur
+
                 <font>
                     <Font size="32" name="Arial Bold Italic"/>
                 </font>
             </Label>
             <Label fx:id="number">
-                001
+
                 <font>
                     <Font size="16" name="Arial Italic"/>
                 </font>
@@ -45,44 +45,15 @@
                     <!--                            <Insets left="15" right="15"/>-->
                     <!--                        </HBox.margin>-->
                     <!--                    </Label>-->
-
-                    <!--                    <Label styleClass="grass,pokemon-type" visible="false" minWidth="100" alignment="CENTER">Flying-->
-                    <!--                        <HBox.margin>-->
-                    <!--                            <Insets left="15" right="15"/>-->
-                    <!--                        </HBox.margin>-->
-                    <!--                    </Label>-->
+                    <!-- ... -->
 
                 </HBox>
-<!--                    <Stat type="hp" value="65">-->
-<!--                        <VBox.margin>-->
-<!--                            <Insets top="20" bottom="20"/>-->
-<!--                        </VBox.margin>-->
-<!--                    </Stat>-->
-<!--                    <Stat type="attack" value="65">-->
-<!--                        <VBox.margin>-->
-<!--                            <Insets top="10" bottom="20"/>-->
-<!--                        </VBox.margin>-->
-<!--                    </Stat>-->
-<!--                    <Stat type="defense" value="65">-->
-<!--                        <VBox.margin>-->
-<!--                            <Insets top="10" bottom="20"/>-->
-<!--                        </VBox.margin>-->
-<!--                    </Stat>-->
-<!--                    <Stat type="sp.atk" value="65">-->
-<!--                        <VBox.margin>-->
-<!--                            <Insets top="10" bottom="20"/>-->
-<!--                        </VBox.margin>-->
-<!--                    </Stat>-->
-<!--                    <Stat type="sp.def" value="65">-->
-<!--                        <VBox.margin>-->
-<!--                            <Insets top="10" bottom="20"/>-->
-<!--                        </VBox.margin>-->
-<!--                    </Stat>-->
-<!--                    <Stat type="speed" value="65">-->
-<!--                        <VBox.margin>-->
-<!--                            <Insets top="10" bottom="20"/>-->
-<!--                        </VBox.margin>-->
-<!--                    </Stat>-->
+                <!--                    <Stat type="hp" value="65">-->
+                <!--                        <VBox.margin>-->
+                <!--                            <Insets top="20" bottom="20"/>-->
+                <!--                        </VBox.margin>-->
+                <!--                    </Stat>-->
+                <!--                    ... -->
             </VBox>
         </HBox>
     </center>
