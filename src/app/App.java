@@ -5,11 +5,6 @@ import app.components.Detail;
 import app.components.SideBar;
 import javafx.fxml.FXML;
 
-import javafx.scene.control.Label;
-
-import javafx.scene.control.ScrollPane;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.util.Callback;
@@ -18,8 +13,7 @@ import java.net.http.*;
 import java.net.URI;
 import java.util.Vector;
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Function;
-import java.util.regex.*;
+
 
 public class App {
 
@@ -36,22 +30,16 @@ public class App {
 	@FXML
 	private Detail detail;
 
-
-
 	public void initialize() {
-//		cards = new Vector<>();
-//		detail.setLoadPokemon(this.loadPokemon);
-//		System.out.println("init load pokemon at app");
-
-//		pokemonList(0, 30);
-
-		detail.getNavigator().setLoadPokemon(this.loadPokemon);
-		this.loadPokemon.call("");
+		side.updateList(0, 4, this.renderPokemon);
+		detail.getNavigator().setRenderPokemon(this.renderPokemon);
+		detail.getNavigator();
 	}
 
 	@FXML
-	private Callback<String, String> loadPokemon = (String name) -> {
-		System.out.println("from App with love");
+	private Callback<Integer, String> loadPokemon = (Integer id) -> {
+		System.out.println(id);
+//		renderPokemon(String.format("%d", id));
 		return "";
 //		HttpClient client = HttpClient.newBuilder().build();
 //		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(String.format("https://pokeapi.co/api/v2/pokemon/%s", name)))
@@ -67,6 +55,12 @@ public class App {
 //					return response.body();
 //				});
 //		return result.join();
+	};
+
+	private final Callback<Integer, Void> renderPokemon = (Integer pokemonId) -> {
+		System.out.println(String.format("render %d", pokemonId));
+		this.detail.setPokemonId(pokemonId);
+		return null;
 	};
 //
 //	public void createCard(String name) {

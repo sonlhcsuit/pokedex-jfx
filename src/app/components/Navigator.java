@@ -9,17 +9,16 @@ import javafx.scene.layout.HBox;
 import javafx.util.Callback;
 
 import java.io.IOException;
-import java.util.function.Function;
 
 public class Navigator extends HBox {
 	@FXML
 	private Button next;
 	@FXML
 	private Button previous;
+	private Callback<Integer, Void> renderPokemon;
 	private int pokemonId;
-	private Callback<String, String> loadPokemon;
 
-	public Navigator(@NamedArg("id") int id) {
+	public Navigator(@NamedArg("pokemonId") int pokemonId) {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setRoot(this);
 		loader.setControllerFactory((empty) -> this);
@@ -29,16 +28,7 @@ public class Navigator extends HBox {
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
-		this.pokemonId = id;
-
-	}
-
-	public void setLoadPokemon(Callback<String, String> loadPokemon) {
-		this.loadPokemon = loadPokemon;
-	}
-
-	public Callback<String, String> getLoadPokemon() {
-		return loadPokemon;
+		this.pokemonId = pokemonId;
 	}
 
 	public void setPokemonId(int pokemonId) {
@@ -49,23 +39,26 @@ public class Navigator extends HBox {
 		return pokemonId;
 	}
 
-	@FXML
+	public void setRenderPokemon(Callback<Integer, Void> renderPokemon) {
+		this.renderPokemon = renderPokemon;
+	}
 
-	public void next(MouseEvent e) {
-		this.loadPokemon.call("asgdas");
-//		loadPokemon("a");
+	public Callback<Integer, Void> getRenderPokemon() {
+		return this.renderPokemon;
+	}
+
+	@FXML
+	public void trigger(MouseEvent e) {
+		if (next.equals(e.getSource())) {
+			this.setPokemonId(this.pokemonId + 1);
+
+			this.renderPokemon.call(this.pokemonId);
+		}
+		if (previous.equals(e.getSource())) {
+			this.setPokemonId(this.pokemonId - 1);
+			this.renderPokemon.call(this.pokemonId);
+		}
 
 	}
 
-
-//	@FXML
-//	public void loadPokemon(MouseEvent e) {
-//		if (this.next.equals(e.getSource())) {
-//			System.out.println("Next");
-//		}
-//		if (this.previous.equals(e.getSource())) {
-//			System.out.println("Previous");
-//		}
-//
-//	}
 }
