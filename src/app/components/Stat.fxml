@@ -14,7 +14,7 @@
             <Insets left="10"/>
         </padding>
         <font>
-            <Font name="Helvetica" size="20"/>
+            <Font name="Helvetica" size="15"/>
         </font>
     </Label>
     <ProgressBar fx:id="progress" minWidth="150" minHeight="15">
@@ -25,7 +25,7 @@
     </ProgressBar>
     <Label fx:id="labelValue">
         <font>
-            <Font name="Helvetica" size="20"/>
+            <Font name="Helvetica" size="15"/>
         </font>
     </Label>
 </fx:root>

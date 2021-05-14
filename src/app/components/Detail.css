@@ -1,4 +1,4 @@
-.border{
+.border {
     -fx-border-style: solid;
     -fx-border-color: blue;
     -fx-border-width: 1px;
@@ -11,13 +11,131 @@
     -fx-pref-height: 450;
 }
 
-.progress-bar{
+.progress-bar {
     -fx-background-radius: 10;
 }
+
 .progress-bar > .bar, .progress-bar > .track {
     -fx-background-insets: 0;
     /*-fx-border-width: 1;*/
     -fx-border-radius: 10;
     /*-fx-border-style: solid;*/
     -fx-background-radius: 10;
+}
+
+.hid {
+    -fx-content-display: hidden;
+}
+
+/*.pokemon-name {*/
+/*    !*-fx-border-style: solid;*!*/
+/*    !*-fx-border-color: black;*!*/
+/*    !*-fx-border-width: 2;*!*/
+/*    -fx-padding: 0 10 0 10;*/
+/*    -fx-border-radius: 5;*/
+/*}*/
+
+.pokemon-type {
+    /*-fx-border-style: solid;*/
+    /*-fx-border-color: black;*/
+    /*-fx-border-width: 2;*/
+    -fx-padding: 5 10 5 10;
+    -fx-border-radius: 5;
+    -fx-font-size: 18;
+    -fx-background-radius: 5;
+}
+
+
+
+
+/* pokemon types */
+.fire {
+    -fx-background-color: #e18544;
+    -fx-text-fill: white;
+}
+
+.normal {
+    -fx-background-color: #a8a87d;
+    -fx-text-fill: white;
+}
+
+.water {
+    -fx-background-color: #6991F1;
+    -fx-text-fill: white;
+}
+
+.flying {
+    -fx-background-color: #A890F0;
+    -fx-text-fill: white;
+}
+
+.fighting {
+    -fx-background-color: #C13129;
+    -fx-text-fill: white;
+}
+
+.grass {
+    -fx-background-color: #78C84F;
+    -fx-text-fill: white;
+}
+
+.electric {
+    -fx-background-color: #F9D12E;
+    -fx-text-fill: white;
+}
+
+.poison {
+    -fx-background-color: #9E409E;
+    -fx-text-fill: white;
+}
+
+
+.psychic {
+    -fx-background-color: #F85887;
+    -fx-text-fill: white;
+}
+
+.ground {
+    -fx-background-color: #E1C068;
+    -fx-text-fill: white;
+}
+
+.ice {
+    -fx-background-color: #99D7D9;
+    -fx-text-fill: white;
+}
+
+.rock {
+    -fx-background-color: #B7A139;
+    -fx-text-fill: white;
+}
+
+.dragon {
+    -fx-background-color: #7038F9;
+    -fx-text-fill: white;
+}
+
+.bug {
+    -fx-background-color: #7038F9;
+    -fx-text-fill: white;
+}
+
+.dark {
+    -fx-background-color: #6E5948;
+    -fx-text-fill: white;
+}
+
+.ghost {
+    -fx-background-color: #715899;
+    -fx-text-fill: white;
+}
+
+.fairy {
+    -fx-background-color: #EF9AAD;
+    -fx-text-fill: white;
+}
+
+.steel {
+    -fx-background-color: #B9B9D0;
+    -fx-text-fill: white;
 }
