@@ -18,19 +18,12 @@ public class App {
 
 	@FXML
 	private SideBar side;
-//	@FXML
-//	private FlowPane cardCont;
-//
-//	@FXML
-//	private HBox cont;
-//	@FXML
-//	private Vector<Card> cards;
 
 	@FXML
 	private Detail detail;
 
 	public void initialize() {
-//		side.updateList(0, 50, this.renderPokemon);
+		side.updateList(0, 50, this.renderPokemon);
 //		detail.getNavigator().setRenderPokemon(this.renderPokemon);
 //		this.renderPokemon.call(1);
 	}
