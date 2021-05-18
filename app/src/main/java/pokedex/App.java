@@ -24,8 +24,8 @@ public class App {
 
 	public void initialize() {
 		side.updateList(0, 50, this.renderPokemon);
-//		detail.getNavigator().setRenderPokemon(this.renderPokemon);
-//		this.renderPokemon.call(1);
+		detail.getNavigator().setRenderPokemon(this.renderPokemon);
+		this.renderPokemon.call(1);
 	}
 
 	@FXML
@@ -43,7 +43,6 @@ public class App {
 					return response.body();
 				});
 	}
-
 
 
 	private String strip(String regex, String jsonPokemon) {

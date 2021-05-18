@@ -1,6 +1,8 @@
 <?import pokedex.components.Search?>
 <?import pokedex.components.SideBar?>
+<?import pokedex.components.Detail ?>
 <?import javafx.scene.layout.*?>
+
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             stylesheets="@/pokedex/App.css"
@@ -13,10 +15,10 @@
     </left>
     <center>
         <VBox alignment="CENTER" styleClass="border-black">
-<!--            <HBox alignment="BASELINE_CENTER">-->
-<!--                <Detail fx:id="detail" name="bulbasaur" stats="60;65;100;80;90;35" types="grass;poison" number="01"-->
-<!--                        image="@/pokedex/resources/bulbasaur.png"/>-->
-<!--            </HBox>-->
+            <HBox alignment="BASELINE_CENTER">
+                <Detail fx:id="detail" name="bulbasaur" stats="60;65;100;80;90;35" types="grass;poison" number="01"
+                        image="@/pokedex/assets/bulbasaur.png"/>
+            </HBox>
             <!--            <VBox alignment="BASELINE_CENTER" s>-->
             <!--                <HBox styleClass="border" fx:id="cont" alignment="BASELINE_CENTER">-->
             <!--                    <Detail fx:id="detail"/>-->
