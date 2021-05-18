@@ -16,7 +16,7 @@
     <Button minWidth="200" focusTraversable="false" onMouseClicked="#trigger" fx:id="previous">
         <graphic>
             <ImageView fitHeight="50" fitWidth="50">
-                <Image url="@/pokedex/resources/left-arrow.png"/>
+                <Image url="@/pokedex/assets/left-arrow.png"/>
             </ImageView>
 
         </graphic>
@@ -32,7 +32,7 @@
     <Button minWidth="200" focusTraversable="false" onMouseClicked="#trigger" fx:id="next">
         <graphic>
             <ImageView fitHeight="50" fitWidth="50">
-                <Image url="@/pokedex/resources/right-arrow.png"/>
+                <Image url="@/pokedex/assets/right-arrow.png"/>
             </ImageView>
         </graphic>
         <font>
