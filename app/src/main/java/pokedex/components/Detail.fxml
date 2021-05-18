@@ -4,15 +4,12 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.text.Font?>
-<?import app.components.Stat?>
+<?import pokedex.components.Navigator?>
 
-
-<?import javafx.geometry.Insets?>
-<?import app.components.Navigator?>
 <fx:root type="javafx.scene.layout.BorderPane"
          xmlns:fx="http://javafx.com/fxml"
-         stylesheets="@/app/components/Detail.css"
-         fx:controller="app.components.Detail"
+         stylesheets="@/pokedex/components/Detail.css"
+         fx:controller="pokedex.components.Detail"
          prefHeight="600"
          prefWidth="600"
          fx:id="detailCont">

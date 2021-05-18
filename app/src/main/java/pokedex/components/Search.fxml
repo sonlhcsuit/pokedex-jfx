@@ -6,8 +6,8 @@
 
 <fx:root type="javafx.scene.layout.HBox"
          xmlns:fx="http://javafx.com/fxml"
-         fx:controller="app.components.Search"
-         stylesheets="@/app/components/Search.css"
+         fx:controller="pokedex.components.Search"
+         stylesheets="@/pokedex/components/Search.css"
          id="cont"
          alignment="BASELINE_CENTER">
     <TextField promptText="Enter Pokemon name" id="search" focusTraversable="false" HBox.hgrow="SOMETIMES">

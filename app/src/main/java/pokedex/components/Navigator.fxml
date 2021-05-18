@@ -10,13 +10,13 @@
 
 <fx:root type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx"
          xmlns:fx="http://javafx.com/fxml"
-         fx:controller="app.components.Navigator"
+         fx:controller="pokedex.components.Navigator"
          alignment="BASELINE_CENTER">
 
     <Button minWidth="200" focusTraversable="false" onMouseClicked="#trigger" fx:id="previous">
         <graphic>
             <ImageView fitHeight="50" fitWidth="50">
-                <Image url="@/app/resources/left-arrow.png"/>
+                <Image url="@/pokedex/resources/left-arrow.png"/>
             </ImageView>
 
         </graphic>
@@ -32,7 +32,7 @@
     <Button minWidth="200" focusTraversable="false" onMouseClicked="#trigger" fx:id="next">
         <graphic>
             <ImageView fitHeight="50" fitWidth="50">
-                <Image url="@/app/resources/right-arrow.png"/>
+                <Image url="@/pokedex/resources/right-arrow.png"/>
             </ImageView>
         </graphic>
         <font>

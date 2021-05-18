@@ -1,4 +1,4 @@
-package app.components;
+package pokedex.components;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -5,7 +5,7 @@
 
 <fx:root type="javafx.scene.layout.VBox"
          xmlns:fx="http://javafx.com/fxml"
-         fx:controller="app.components.Card" alignment="BASELINE_CENTER" prefWidth="200" minHeight="300" id="cont" stylesheets="@/app/components/Card.css">
+         fx:controller="pokedex.components.Card" alignment="BASELINE_CENTER" prefWidth="200" minHeight="300" id="cont" stylesheets="@/pokedex/components/Card.css">
     <StackPane >
         <ImageView fx:id="img" preserveRatio="true" fitHeight="200">
         </ImageView>

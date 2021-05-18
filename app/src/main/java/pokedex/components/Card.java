@@ -1,7 +1,6 @@
-package app.components;
+package pokedex.components;
 
 import java.io.IOException;
-import java.util.Locale;
 
 import javafx.beans.DefaultProperty;
 import javafx.beans.NamedArg;

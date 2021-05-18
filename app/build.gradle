@@ -4,6 +4,16 @@
 
 plugins {
     id 'pokedex.java-application-conventions'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    version = "16"
+    modules = [ 'javafx.controls','javafx.fxml' ]
 }
 
 dependencies {
@@ -13,5 +23,5 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'pokedex.app.App'
+    mainClass = 'pokedex.Main'
 }

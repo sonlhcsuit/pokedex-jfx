@@ -5,8 +5,8 @@
 
 <fx:root type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx"
          xmlns:fx="http://javafx.com/fxml"
-         fx:controller="app.components.SideBar"
-         stylesheets="@/app/components/SideBar.css">
+         fx:controller="pokedex.components.SideBar"
+         stylesheets="@/pokedex/components/SideBar.css">
     <ListView VBox.vgrow="ALWAYS" focusTraversable="false" id="list" fx:id="listView">
 
     </ListView>

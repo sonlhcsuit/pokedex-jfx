@@ -24,7 +24,7 @@ lib
 └── javafx-graphics-16.jar
 
 ```
-![bulb](src/app/resources/bulbasaur.png)
+![bulb](app/src/main/java/pokedex/resources/bulbasaur.png)
 
 I remove this becasue too slow, I couldn't find any way to accurate download speed when dealing with third-party api.
 ![demo](demo.png)

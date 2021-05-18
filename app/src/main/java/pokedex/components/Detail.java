@@ -1,4 +1,4 @@
-package app.components;
+package pokedex.components;
 
 import javafx.beans.NamedArg;
 import javafx.fxml.FXML;
