@@ -3,7 +3,6 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.text.Font?>
-
 <fx:root type="javafx.scene.layout.HBox"
          xmlns:fx="http://javafx.com/fxml"
          fx:controller="pokedex.components.Search"
@@ -29,3 +28,4 @@
         </font>
     </Button>
 </fx:root>
+
