@@ -1,37 +1,43 @@
-<?import pokedex.components.Search?>
-<?import pokedex.components.SideBar?>
-<?import pokedex.components.Detail ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.*?>
-
-
-<BorderPane xmlns:fx="http://javafx.com/fxml"
+<?import pokedex.AutoResizeButton?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
             stylesheets="@/pokedex/App.css"
             fx:controller="pokedex.App">
-    <top>
-        <Search/>
-    </top>
-    <left>
-        <SideBar fx:id="side"/>
-    </left>
-    <center>
-        <VBox alignment="CENTER" styleClass="border-black">
-            <HBox alignment="BASELINE_CENTER">
-                <Detail fx:id="detail" name="bulbasaur" stats="60;65;100;80;90;35" types="grass;poison" number="01"
-                        image="@/pokedex/assets/bulbasaur.png"/>
-            </HBox>
-            <!--            <VBox alignment="BASELINE_CENTER" s>-->
-            <!--                <HBox styleClass="border" fx:id="cont" alignment="BASELINE_CENTER">-->
-            <!--                    <Detail fx:id="detail"/>-->
-            <!--                    &lt;!&ndash;            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" styleClass="border">&ndash;&gt;-->
-            <!--                    &lt;!&ndash;                <FlowPane vgap="20" hgap="50" fx:id="cardCont">&ndash;&gt;-->
-            <!--                    &lt;!&ndash;                    <padding>&ndash;&gt;-->
-            <!--                    &lt;!&ndash;                        <Insets top="10" bottom="10" left="50" right="50"/>&ndash;&gt;-->
-            <!--                    &lt;!&ndash;                    </padding>&ndash;&gt;-->
-            <!--                    &lt;!&ndash;                </FlowPane>&ndash;&gt;-->
-            <!--                    &lt;!&ndash;            </ScrollPane>&ndash;&gt;-->
-            <!--                </HBox>-->
-            <!--            </VBox>-->
-        </VBox>
+        <AutoResizeButton />
+</AnchorPane>
 
-    </center>
-</BorderPane>
+<!--        <?import pokedex.components.Search?>-->
+<!--        <?import pokedex.components.SideBar?>-->
+<!--        <?import pokedex.components.Detail ?>-->
+        <!--<BorderPane xmlns:fx="http://javafx.com/fxml"-->
+        <!--            stylesheets="@/pokedex/App.css"-->
+        <!--            fx:controller="pokedex.App">-->
+        <!--    <top>-->
+        <!--        <Search/>-->
+        <!--    </top>-->
+        <!--    <left>-->
+        <!--        <SideBar fx:id="side"/>-->
+        <!--    </left>-->
+        <!--    <center>-->
+        <!--        <VBox alignment="CENTER" styleClass="border-black">-->
+        <!--            <HBox alignment="BASELINE_CENTER">-->
+        <!--                <Detail fx:id="detail" name="bulbasaur" stats="60;65;100;80;90;35" types="grass;poison" number="01"-->
+        <!--                        image="@/pokedex/assets/bulbasaur.png"/>-->
+        <!--            </HBox>-->
+        <!--            &lt;!&ndash;            <VBox alignment="BASELINE_CENTER" s>&ndash;&gt;-->
+        <!--            &lt;!&ndash;                <HBox styleClass="border" fx:id="cont" alignment="BASELINE_CENTER">&ndash;&gt;-->
+        <!--            &lt;!&ndash;                    <Detail fx:id="detail"/>&ndash;&gt;-->
+        <!--            &lt;!&ndash;                    &lt;!&ndash;            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" styleClass="border">&ndash;&gt;&ndash;&gt;-->
+        <!--            &lt;!&ndash;                    &lt;!&ndash;                <FlowPane vgap="20" hgap="50" fx:id="cardCont">&ndash;&gt;&ndash;&gt;-->
+        <!--            &lt;!&ndash;                    &lt;!&ndash;                    <padding>&ndash;&gt;&ndash;&gt;-->
+        <!--            &lt;!&ndash;                    &lt;!&ndash;                        <Insets top="10" bottom="10" left="50" right="50"/>&ndash;&gt;&ndash;&gt;-->
+        <!--            &lt;!&ndash;                    &lt;!&ndash;                    </padding>&ndash;&gt;&ndash;&gt;-->
+        <!--            &lt;!&ndash;                    &lt;!&ndash;                </FlowPane>&ndash;&gt;&ndash;&gt;-->
+        <!--            &lt;!&ndash;                    &lt;!&ndash;            </ScrollPane>&ndash;&gt;&ndash;&gt;-->
+        <!--            &lt;!&ndash;                </HBox>&ndash;&gt;-->
+        <!--            &lt;!&ndash;            </VBox>&ndash;&gt;-->
+        <!--        </VBox>-->
+
+        <!--    </center>-->
+        <!--</BorderPane>-->
