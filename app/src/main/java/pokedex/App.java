@@ -23,9 +23,9 @@ public class App {
 	private Detail detail;
 
 	public void initialize() {
-//		side.updateList(0, 50, this.renderPokemon);
-//		detail.getNavigator().setRenderPokemon(this.renderPokemon);
-//		this.renderPokemon.call(1);
+		side.updateList(0, 50, this.renderPokemon);
+		detail.getNavigator().setRenderPokemon(this.renderPokemon);
+		this.renderPokemon.call(1);
 	}
 
 	@FXML

@@ -36,10 +36,16 @@ Stage ⇒ Scene ⇒ scene graph (tree) ⇒ node (ui controls)
 
 Một điểm trừ của JFX là đã tách ra khỏi jdk, trở thành một third party libs (opensource) dẫn tới khả năng tiến hoá đáng kể
 
-# Giới thiệu cách viết component search
+# Giới thiệu cách viết code theo dạng code-based (tạo GUI bằng java)
 
 Khi chúng ta viết component thì component sẽ hành xử như là một node, mà thành phần quan trọng nhất của Node (giao diện, cách mà nó được tạo thành thì là FXML), vậy nên cần có đoạn code khởi tạo Controller tương ứng. Một node khi khởi tạo xong sẽ gọi tới hàm initialze để hoàn thành các công viêc của chúng (đặt giá trị mặc định).
 
+# Giới thiệu cách viết code theo dạng hay viết javafx
 
-# Demo và giải thích 
+chia làm 2 phần controller & resources
+
+# Demo và nói về app của mình
+
+
+# Các yếu điểm, vấn đề khi code với javafx
 
