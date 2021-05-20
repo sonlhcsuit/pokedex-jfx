@@ -18,6 +18,7 @@ import java.util.Vector;
 
 
 public class Detail extends BorderPane {
+//	annotation
 	@FXML
 	private VBox cont;
 	@FXML
